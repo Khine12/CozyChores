@@ -167,11 +167,3 @@ button:hover {
     flex-direction: column;
   }
 }
-#footer {
-  text-align: center;
-  color: #ccc;
-  padding: 1rem;
-  font-size: 1rem;
-  border-top: 1px solid #444;
-  background-color: #111;
-}
