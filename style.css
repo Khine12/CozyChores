@@ -162,6 +162,13 @@ button:hover {
   header h1 {
     font-size: 2rem;
   }
+input[type="date"] {
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 0.4rem;
+  border-radius: 4px;
+}
 
   .auth-buttons {
     flex-direction: column;
