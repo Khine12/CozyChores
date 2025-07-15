@@ -1,0 +1,169 @@
+/* CozyChores - Dark Theme CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #111;
+  color: #f0f0f0;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #66ff66;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-top: 0.5rem;
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+}
+
+h2, h3 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.auth-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.auth-form,
+#group-section,
+#tasks-section {
+  margin-top: 1.5rem;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  background-color: #222;
+  color: #fff;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #888;
+}
+
+button {
+  display: inline-block;
+  background-color: #28a745;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+#logout-btn {
+  margin-left: 1rem;
+  background-color: #dc3545;
+}
+
+#logout-btn:hover {
+  background-color: #c82333;
+}
+
+.hidden {
+  display: none;
+}
+
+#member-list ul,
+#task-list ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#member-list li,
+#task-list li {
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  color: #eee;
+}
+
+#task-list li strong {
+  color: #66ff66;
+}
+
+/* ===== Group ID Display ===== */
+#group-id-display {
+  margin-top: -10px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  font-style: italic;
+  text-align: center;
+}
+
+/* ===== Leave Group Button ===== */
+#leave-group-btn {
+  display: block;
+  background-color: #ff8c00;
+  color: #000;
+  font-weight: bold;
+  padding: 8px 12px;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#leave-group-btn:hover {
+  background-color: #ff7518;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  body {
+    padding: 1rem;
+  }
+
+  main {
+    padding: 1.2rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+  }
+}
