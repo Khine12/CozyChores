@@ -1,11 +1,11 @@
-🌿 CozyChores
+### 🌿 CozyChores
 CozyChores is a full-stack web app that helps housemates fairly assign, track, and manage shared chores in real time — no more repeating reminders or uneven task loads.
 
-🔗 Live Demo
+### 🔗 Live Demo
 https://khine12.github.io/CozyChores/
 
 
-###✨ Features
+### ✨ Features
 
 ✅ User Authentication (Firebase Auth)
 
@@ -30,13 +30,13 @@ https://khine12.github.io/CozyChores/
 🎨 Dark theme and polished UX
 
 
-###🛠️ Tech Stack
+### 🛠️ Tech Stack
 Frontend: HTML, CSS, JavaScript
 Backend: Firebase Auth + Firestore
 Hosting: GitHub Pages (Frontend) + Firebase (Backend)
 
 
-###🎯 Motivation
+### 🎯 Motivation
 This project was inspired by real-life shared apartment experiences — where cleaning chores often led to frustration. I wanted to create a tool that made task distribution fair, transparent, and actually enjoyable to use.
 
 ### 🙋‍♀️ Developer
