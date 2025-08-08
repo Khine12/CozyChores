@@ -31,14 +31,20 @@ https://khine12.github.io/CozyChores/
 
 
 ### 🛠️ Tech Stack
+
 Frontend: HTML, CSS, JavaScript
+
 Backend: Firebase Auth + Firestore
+
 Hosting: GitHub Pages (Frontend) + Firebase (Backend)
 
 
 ### 🎯 Motivation
+
 This project was inspired by real-life shared apartment experiences — where cleaning chores often led to frustration. I wanted to create a tool that made task distribution fair, transparent, and actually enjoyable to use.
 
 ### 🙋‍♀️ Developer
+
 Khine Zar Hein
+
 LinkedIn : www.linkedin.com/in/khine-zar-hein
