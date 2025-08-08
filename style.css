@@ -1,4 +1,5 @@
-/* CozyChores - Dark Theme CSS */
+/* CozyChores - Final Dark Theme CSS (Polished with RhythmTasks Feel + Dashboard Enhancements) */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,60 +12,109 @@ body {
   color: #f0f0f0;
   padding: 2rem;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 header h1 {
-  font-size: 2.5rem;
-  color: #66ff66;
+  font-size: 2.8rem;
+  color: #40f940;
+  font-weight: 700;
 }
 
 header p {
   font-size: 1.1rem;
-  color: #ccc;
+  color: white;
+  margin-top: 1.7rem;
+}
+
+#clock {
+  font-size: 1rem;
+  color: #aaa;
   margin-top: 0.5rem;
 }
 
-main {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #1e1e1e;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #000;
+#session-info {
+  font-size: 0.9rem;
+  color: white;
+  text-align: right;
+  margin-bottom: 0.7rem;
 }
 
-h2, h3 {
-  color: #ffffff;
-  margin-bottom: 1rem;
-  text-align: center;
+#logout-btn {
+  margin-left: 0.5rem;
+  padding: 5px 10px;
+  background-color: #ff4444;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.8rem;
 }
 
-.auth-buttons {
+#logout-btn:hover {
+  background-color: #e03636;
+}
+
+.auth-container {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  margin: 1rem auto;
+  max-width: 900px;
 }
 
-.auth-form,
-#group-section,
-#tasks-section {
-  margin-top: 1.5rem;
+.auth-section {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border: 1px solid #2a2a2a;
 }
 
-input, select, textarea {
+.auth-section h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+#group-section h2 {
+  margin-bottom: 0.5rem;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="date"],
+textarea,
+select {
   width: 100%;
   padding: 10px;
-  border: 1px solid #444;
-  border-radius: 5px;
+  margin-top: 0.3rem;
   margin-bottom: 1rem;
+  border: 1px solid #333;
+  border-radius: 6px;
   background-color: #222;
   color: #fff;
+  font-size: 0.95rem;
 }
 
 input::placeholder,
@@ -73,104 +123,284 @@ textarea::placeholder {
 }
 
 button {
-  display: inline-block;
   background-color: #28a745;
   color: #fff;
-  font-weight: 600;
+  font-weight: bold;
   border: none;
-  border-radius: 5px;
-  padding: 10px 15px;
+  border-radius: 6px;
+  padding: 10px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-size: 1rem;
 }
 
 button:hover {
-  background-color: #218838;
+  background-color: #1e8e3e;
 }
 
-#logout-btn {
-  margin-left: 1rem;
-  background-color: #dc3545;
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
-#logout-btn:hover {
-  background-color: #c82333;
+.filter-btn {
+  background-color: #333;
+  color: #ccc;
+  border: 1px solid #444;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  margin-bottom: 1rem;
+  background-color: #444;
+}
+
+#group-section,
+#task-form,
+#task-list,
+#chat-container,
+#member-list {
+  background-color: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+#chat-messages {
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #111;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  border: 1px solid #333;
+}
+
+#chat-messages div {
+  margin-bottom: 0.3rem;
+}
+
+textarea {
+  resize: vertical;
 }
 
 .hidden {
   display: none;
 }
 
-#member-list ul,
-#task-list ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-#member-list li,
-#task-list li {
-  background-color: #2a2a2a;
-  border: 1px solid #333;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 0.5rem;
-  color: #eee;
-}
-
-#task-list li strong {
+/* Group ID centered under intro */
+.group-id-display {
+  text-align: center;
   color: #66ff66;
-}
-
-/* ===== Group ID Display ===== */
-#group-id-display {
-  text-align: center; /* Or left, if you prefer left-align */
+  font-weight: 600;
   font-size: 1rem;
-  font-weight: bold;
-  color: #00e0ff; /* Bright cyan — change to yellow or green if you prefer */
-  margin-bottom: 1rem;
-  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
 }
 
-/* ===== Leave Group Button ===== */
-#leave-group-btn {
-  display: block;
-  background-color: #ff8c00;
-  color: #000;
-  font-weight: bold;
-  padding: 8px 12px;
-  margin: 0 auto 1.5rem auto;
-  border-radius: 6px;
+#task-list h3,
+#chat-container h3,
+#member-list h3 {
+  margin-bottom: 0.5rem;
+}
+
+.leave-group-container {
+  bottom: 4rem;
+  text-align: right;
+  display: none; /* Hidden by default */
+  z-index: 100;
+}
+
+/* General button styles */
+button {
+  margin-top: 6px;
+  margin-right: 9px;
+  padding: 6px 10px;
+  font-size: 14px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-weight: 600;
 }
 
-#leave-group-btn:hover {
-  background-color: #ff7518;
+/* Task list spacing */
+#task-list li {
+  margin-bottom: 1rem;
+  padding: 10px;
+  border-bottom: 1px solid #444;
+  list-style: none;
 }
 
-/* Responsive */
+/* Group task info tighter */
+#task-list li strong {
+  font-size: 1rem;
+}
+
+/* Compact spacing for metadata */
+#task-list li br {
+  line-height: 1.2;
+}
+
+/* Button spacing */
+#task-list button {
+  margin: 6px 6px 0 0;
+  padding: 5px 10px;
+  font-size: 13px;
+}
+
+/* Responsive: stack buttons on narrow screens */
 @media (max-width: 500px) {
-  body {
-    padding: 1rem;
+  /* Task block padding on mobile */
+  #task-list li {
+    padding: 8px;
+    margin-bottom: 0.7rem;
+    line-height: 1.3;
   }
 
-  main {
-    padding: 1.2rem;
+  /* Task title font slightly smaller */
+  #task-list li strong {
+    font-size: 0.95rem;
+  }
+
+  /* Make all buttons stack full-width */
+  #task-list button {
+    display: block;
+    width: 100%;
+    margin: 6px 0;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+
+  /* Filter buttons (top: All, Pending, Completed, etc.) */
+  .filter-buttons button {
+    padding: 4px 8px;
+    font-size: 12px;
+    margin: 4px 4px 0 0;
+  }
+
+  /* Leave Group and Logout button spacing */
+  .leave-group-btn,
+  .logout-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+    margin-top: 10px;
+  }
+
+  /* Auth section (login/signup) spacing */
+  .auth-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .auth-section {
+    padding: 1rem;
   }
 
   header h1 {
     font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
   }
-input[type="date"] {
-  background-color: white;
-  color: black;
-  border: 1px solid #ccc;
-  padding: 0.4rem;
-  border-radius: 4px;
 }
 
-  .auth-buttons {
-    flex-direction: column;
+/* Scrollable Task List Container */
+.task-list-container {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-top: 1rem;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background-color: #111;
+}
+
+/* Optional: Slightly tighter spacing inside tasks */
+#tasks li {
+  margin-bottom: 1rem;
+  padding: 10px;
+  border-bottom: 1px solid #444;
+  list-style: none;
+}
+
+/* Mobile: reduce height for better fit */
+@media (max-width: 500px) {
+  .task-list-container {
+    max-height: 220px;
+  }
+}
+
+/* Forgot Password Style */
+.forgot-password {
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  color: #eee;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.forgot-password button {
+  background: none;
+  border: none;
+  color: #99f866;  /* light purple that works with dark + green */
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0;
+}
+
+.forgot-password button:hover {
+  text-decoration: none;
+  color: #99f866;
+}
+
+/* Center and contain main content */
+main {
+  max-width: 800px; /* or try 900px if you want it a bit wider */
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-size: 1.5rem;
+}
+
+body.loaded #loading-screen {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  white-space: normal;
+  word-break: break-word;
+}
+
+@media (max-width: 480px) {
+  footer {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    max-width: 90%;
+    margin: 0 auto;
+    line-height: 1.4;
   }
 }

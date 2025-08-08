@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CozyChores | Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Loading screen -->
+  <div id="loading-screen">
+    <p>Loading...</p>
+  </div>
+
+  <header>
+    <div id="session-info">
+      Logged in as: <span id="session-user-email"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
+    <h1>CozyChores</h1>
+    <p> Organize, assign, and track chores with your roommates—clean and cozy together. </p>
+    <div id="clock"></div>
+  </header>
+
+  <main>
+    <!-- Group Section -->
+    <section id="group-section" class="hidden">
+      <h2>Your Group</h2>
+      <button id="create-group">Create New Group</button>
+      <div style="height: 1rem;"></div>
+      <div>
+        <input type="text" id="group-code" placeholder="Enter Group Code to Join" />
+        <button id="join-group">Join Group</button>
+      </div>
+    </section>
+
+    <!-- Task Section -->
+    <section id="tasks-section" class="hidden">
+      <!-- Group Info -->
+      <p id="group-id-display" class="group-id-display"></p>
+
+      <!-- Members -->
+      <div id="member-list">
+        <h3>Group Members</h3>
+        <ul id="members"></ul>
+      </div>
+
+      <!-- Assign Task -->
+      <div class="form-container">
+        <form id="task-form">
+          <h3>Assign a New Chore</h3>
+          <label for="assignee">Assign To:</label>
+          <select id="assignee" required></select>
+
+          <label for="task-name">Chore Description:</label>
+          <input type="text" id="task-name" placeholder="e.g., Wash dishes" required />
+
+          <label for="due-date">Due Date:</label>
+          <input type="date" id="due-date" required />
+
+          <label for="task-note">Note (optional):</label>
+          <textarea id="task-note" rows="2" placeholder="Extra instructions..."></textarea>
+
+          <button type="submit">Assign Chore</button>
+        </form>
+      </div>
+
+      <!-- Filter Tasks -->
+      <div class="filter-buttons">
+        <button class="filter-btn" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="pending">Pending</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+        <button class="filter-btn" data-filter="request">Requested More Time</button>
+      </div>
+
+      <!-- Task List -->
+      <div id="task-list">
+        <h3>Assigned Chores</h3>
+        <div class="task-list-container">
+          <ul id="tasks"></ul>
+        </div>
+      </div>
+
+
+      <!-- Group Chat -->
+      <div id="chat-container">
+        <h3>Group Chat</h3>
+        <div id="chat-messages"></div>
+        <form id="chat-form">
+          <input type="text" id="chat-input" placeholder="Type a message..." required />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Leave Group Button -->
+    <div class="leave-group-container">
+      <button id="leave-group-btn" class="leave-group-btn">Leave Group</button>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Khine Zar Hein | Built with 💻 and ☕ | Based in the US</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>        
