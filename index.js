@@ -1,5 +1,3 @@
-// index.js – CozyChores Firebase Auth Logic
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {
   getAuth,
@@ -12,17 +10,14 @@ import {
 
 import { firebaseConfig } from "./firebase-config.js";
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Wait for DOM to be fully loaded
 window.addEventListener("DOMContentLoaded", () => {
   const signupForm = document.getElementById("signup-form");
   const loginForm = document.getElementById("login-form");
   const forgotPasswordLink = document.getElementById("forgot-password-link");
 
-  // Sign Up
   signupForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const name = document.getElementById("signup-name").value.trim();
@@ -47,7 +42,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Log In
   loginForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const email = document.getElementById("login-email").value.trim();
@@ -69,7 +63,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Forgot Password
   forgotPasswordLink.addEventListener("click", async () => {
     const email = prompt("Enter your email to reset your password:");
     if (!email) return;
@@ -82,7 +75,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Optional: Redirect to dashboard if already logged in
   onAuthStateChanged(auth, (user) => {
     if (user && user.emailVerified) {
       window.location.href = "dashboard.html";
