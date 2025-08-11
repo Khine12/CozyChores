@@ -1,5 +1,3 @@
-// firebase-config.js
-
 export const firebaseConfig = {
   apiKey: "AIzaSyD8Iov-VzypKaCnDacGcyFqgPYMwJrOOpc",
   authDomain: "cozychores12.firebaseapp.com",
