@@ -1,5 +1,3 @@
-/* CozyChores - Final Dark Theme CSS (Polished with RhythmTasks Feel + Dashboard Enhancements) */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -194,7 +192,6 @@ textarea {
   display: none;
 }
 
-/* Group ID centered under intro */
 .group-id-display {
   text-align: center;
   color: #66ff66;
@@ -212,11 +209,10 @@ textarea {
 .leave-group-container {
   bottom: 4rem;
   text-align: right;
-  display: none; /* Hidden by default */
+  display: none; 
   z-index: 100;
 }
 
-/* General button styles */
 button {
   margin-top: 6px;
   margin-right: 9px;
@@ -228,7 +224,6 @@ button {
   font-weight: 600;
 }
 
-/* Task list spacing */
 #task-list li {
   margin-bottom: 1rem;
   padding: 10px;
@@ -236,38 +231,31 @@ button {
   list-style: none;
 }
 
-/* Group task info tighter */
 #task-list li strong {
   font-size: 1rem;
 }
 
-/* Compact spacing for metadata */
 #task-list li br {
   line-height: 1.2;
 }
 
-/* Button spacing */
 #task-list button {
   margin: 6px 6px 0 0;
   padding: 5px 10px;
   font-size: 13px;
 }
 
-/* Responsive: stack buttons on narrow screens */
 @media (max-width: 500px) {
-  /* Task block padding on mobile */
   #task-list li {
     padding: 8px;
     margin-bottom: 0.7rem;
     line-height: 1.3;
   }
 
-  /* Task title font slightly smaller */
   #task-list li strong {
     font-size: 0.95rem;
   }
 
-  /* Make all buttons stack full-width */
   #task-list button {
     display: block;
     width: 100%;
@@ -277,14 +265,12 @@ button {
     font-size: 13px;
   }
 
-  /* Filter buttons (top: All, Pending, Completed, etc.) */
   .filter-buttons button {
     padding: 4px 8px;
     font-size: 12px;
     margin: 4px 4px 0 0;
   }
 
-  /* Leave Group and Logout button spacing */
   .leave-group-btn,
   .logout-btn {
     padding: 6px 12px;
@@ -292,7 +278,6 @@ button {
     margin-top: 10px;
   }
 
-  /* Auth section (login/signup) spacing */
   .auth-container {
     flex-direction: column;
     align-items: center;
@@ -310,7 +295,6 @@ button {
   }
 }
 
-/* Scrollable Task List Container */
 .task-list-container {
   max-height: 300px;
   overflow-y: auto;
@@ -321,7 +305,6 @@ button {
   background-color: #111;
 }
 
-/* Optional: Slightly tighter spacing inside tasks */
 #tasks li {
   margin-bottom: 1rem;
   padding: 10px;
@@ -329,14 +312,12 @@ button {
   list-style: none;
 }
 
-/* Mobile: reduce height for better fit */
 @media (max-width: 500px) {
   .task-list-container {
     max-height: 220px;
   }
 }
 
-/* Forgot Password Style */
 .forgot-password {
   margin-top: 0.8rem;
   font-size: 0.95rem;
@@ -349,7 +330,7 @@ button {
 .forgot-password button {
   background: none;
   border: none;
-  color: #99f866;  /* light purple that works with dark + green */
+  color: #99f866;  
   cursor: pointer;
   font-weight: 500;
   padding: 0;
@@ -360,9 +341,8 @@ button {
   color: #99f866;
 }
 
-/* Center and contain main content */
 main {
-  max-width: 800px; /* or try 900px if you want it a bit wider */
+  max-width: 800px; 
   margin: 0 auto;
   padding: 1rem;
 }
