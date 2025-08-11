@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <!-- Loading screen -->
   <div id="loading-screen">
     <p>Loading...</p>
   </div>
@@ -24,7 +23,6 @@
   </header>
 
   <main>
-    <!-- Group Section -->
     <section id="group-section" class="hidden">
       <h2>Your Group</h2>
       <button id="create-group">Create New Group</button>
@@ -35,18 +33,14 @@
       </div>
     </section>
 
-    <!-- Task Section -->
     <section id="tasks-section" class="hidden">
-      <!-- Group Info -->
       <p id="group-id-display" class="group-id-display"></p>
 
-      <!-- Members -->
       <div id="member-list">
         <h3>Group Members</h3>
         <ul id="members"></ul>
       </div>
 
-      <!-- Assign Task -->
       <div class="form-container">
         <form id="task-form">
           <h3>Assign a New Chore</h3>
@@ -66,7 +60,6 @@
         </form>
       </div>
 
-      <!-- Filter Tasks -->
       <div class="filter-buttons">
         <button class="filter-btn" data-filter="all">All</button>
         <button class="filter-btn" data-filter="pending">Pending</button>
@@ -74,7 +67,6 @@
         <button class="filter-btn" data-filter="request">Requested More Time</button>
       </div>
 
-      <!-- Task List -->
       <div id="task-list">
         <h3>Assigned Chores</h3>
         <div class="task-list-container">
@@ -83,7 +75,6 @@
       </div>
 
 
-      <!-- Group Chat -->
       <div id="chat-container">
         <h3>Group Chat</h3>
         <div id="chat-messages"></div>
@@ -94,7 +85,6 @@
       </div>
     </section>
 
-    <!-- Leave Group Button -->
     <div class="leave-group-container">
       <button id="leave-group-btn" class="leave-group-btn">Leave Group</button>
     </div>
@@ -105,7 +95,6 @@
     <p>Khine Zar Hein | Built with 💻 and ☕ | Based in the US</p>
   </footer>
 
-  <!-- Scripts -->
   <script type="module" src="firebase-config.js"></script>
   <script type="module" src="dashboard.js"></script>
 </body>
