@@ -1,5 +1,3 @@
-// dashboard.js – CozyChores Full Functionality (Chat Sender Name Fixed)
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {
   getAuth,
@@ -26,12 +24,10 @@ import {
 
 import { firebaseConfig } from "./firebase-config.js";
 
-// Init Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
 
-// DOM elements
 const sessionEmail = document.getElementById("session-user-email");
 const logoutBtn = document.getElementById("logout-btn");
 const createGroupBtn = document.getElementById("create-group");
@@ -49,17 +45,14 @@ const groupSection = document.getElementById("group-section");
 const tasksSection = document.getElementById("tasks-section");
 const leaveGroupBtn = document.getElementById("leave-group-btn");
 
-// Chat
 const chatForm = document.getElementById("chat-form");
 const chatInput = document.getElementById("chat-input");
 const chatMessages = document.getElementById("chat-messages");
 
-// State
 let currentUser = null;
 let currentGroupId = null;
 let currentUserName = "";
 
-// On user login
 onAuthStateChanged(auth, async (user) => {
   if (!user || !user.emailVerified) {
     window.location.href = "index.html";
@@ -88,26 +81,24 @@ onAuthStateChanged(auth, async (user) => {
   if (currentGroupId && currentGroupId !== "null") { 
     showGroupSection(false);
     loadGroupData(currentGroupId);
-    leaveGroupContainer.style.display = "block"; // ✅ Show it
+    leaveGroupContainer.style.display = "block"; 
   } 
   
   else {
     showGroupSection(true);
-    leaveGroupContainer.style.display = "none"; // ✅ Hide it
+    leaveGroupContainer.style.display = "none"; 
   }
 
   document.body.classList.add("loaded");
 
 });
 
-// Show/hide sections
 function showGroupSection(showGroup) {
   groupSection.classList.toggle("hidden", !showGroup);
   tasksSection.classList.toggle("hidden", showGroup);
 }
 
 
-// Create Group
 createGroupBtn.addEventListener("click", async () => {
   const groupId = "grp-" + Math.random().toString(36).substring(2, 6);
   const groupRef = doc(db, "groups", groupId);
@@ -122,7 +113,6 @@ createGroupBtn.addEventListener("click", async () => {
   loadGroupData(groupId);
 });
 
-// Join Group
 joinGroupBtn.addEventListener("click", async () => {
   const groupId = groupCodeInput.value.trim();
   if (!groupId) return alert("Please enter a group code.");
@@ -139,7 +129,6 @@ joinGroupBtn.addEventListener("click", async () => {
   loadGroupData(groupId);
 });
 
-// Leave Group
 leaveGroupBtn.addEventListener("click", async () => {
   await updateDoc(doc(db, "users", currentUser.uid), {
     groupId: null
@@ -147,22 +136,18 @@ leaveGroupBtn.addEventListener("click", async () => {
 
   currentGroupId = null;
 
-  // Optional: Clear data
   taskList.innerHTML = "";
   chatMessages.innerHTML = "";
   assigneeSelect.innerHTML = "";
   membersList.innerHTML = "";
   groupCodeInput.value = "";
 
-  // ✅ Redirect to login/signup page
   window.location.href = "index.html";
 });
 
-// Load group data
 function loadGroupData(groupId) {
   groupIdDisplay.textContent = `Group ID: ${groupId}`;
 
-  // Load members
   const membersQuery = query(collection(db, "users"), where("groupId", "==", groupId));
   onSnapshot(membersQuery, (snapshot) => {
     membersList.innerHTML = "";
@@ -180,7 +165,6 @@ function loadGroupData(groupId) {
     });
   });
 
-  // Load tasks
   const taskQuery = query(collection(db, "tasks"), where("groupId", "==", groupId));
   onSnapshot(taskQuery, (snapshot) => {
     taskList.innerHTML = "";
@@ -195,7 +179,6 @@ function loadGroupData(groupId) {
 
       let actionButtons = "";
 
-      // Assignee buttons
       if (task.assigneeId === currentUser.uid) {
         if (task.status === "completed") {
           actionButtons += `<button onclick="undoTask('${docSnap.id}')">Undo</button>`;
@@ -207,7 +190,6 @@ function loadGroupData(groupId) {
         }
   }
 
-  // Assigner delete button
   if (task.assignerName === currentUserName) {
     actionButtons += `<button onclick="deleteTask('${docSnap.id}')">Delete</button>`;
   }
@@ -244,8 +226,6 @@ function loadGroupData(groupId) {
   });
 }
 
-
-// Assign Task
 taskForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const assigneeId = assigneeSelect.value;
@@ -267,7 +247,6 @@ taskForm.addEventListener("submit", async (e) => {
   taskForm.reset();
 });
 
-// Task Status Actions
 window.markDone = async (taskId) => {
   await updateDoc(doc(db, "tasks", taskId), {
     status: "completed"
@@ -280,14 +259,12 @@ window.requestMoreTime = async (taskId) => {
   });
 };
 
-// Undo task (for assignee)
 window.undoTask = async (taskId) => {
   await updateDoc(doc(db, "tasks", taskId), {
     status: "pending"
   });
 };
 
-// Delete task (for assigner)
 window.deleteTask = async (taskId) => {
   const confirmDelete = confirm("Are you sure you want to delete this task?");
   if (confirmDelete) {
@@ -295,8 +272,6 @@ window.deleteTask = async (taskId) => {
   }
 };
 
-
-// Filters
 const filterButtons = document.querySelectorAll(".filter-btn");
 filterButtons.forEach(btn => {
   btn.addEventListener("click", () => {
@@ -311,7 +286,6 @@ filterButtons.forEach(btn => {
   });
 });
 
-// Chat
 chatForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const message = chatInput.value.trim();
@@ -328,7 +302,6 @@ chatForm.addEventListener("submit", async (e) => {
   chatInput.value = "";
 });
 
-// Logout
 logoutBtn.addEventListener("click", async () => {
   await signOut(auth);
   localStorage.clear();
