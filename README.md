@@ -31,12 +31,7 @@ CozyChores is a full-stack web app that helps housemates fairly assign, track, a
    
 2. Sign up with your email and create a password
    
-3. Check your inbox to verify your email
-
-💡 **Note:** If you're signing up for the first time, the verification email may land in your **spam** or **promotions** folder — please check there!
-
-4. After verifying, log in and start organizing chores with your group!
-
+3. After verifying your email, log in and start organizing chores with your group!
 
 ### 🛠️ Tech Stack
 
