@@ -27,7 +27,7 @@ CozyChores is a full-stack web app that helps housemates fairly assign, track, a
 
 ### 🚀 How to Use
 
-1. Visit https://khine12.github.io/CozyChores/
+1. Visit [Live Demo] (https://khine12.github.io/CozyChores/)
    
 2. Sign up with your email and create a password
    
@@ -50,4 +50,4 @@ This project was inspired by real-life shared apartment experiences — where cl
 
 Khine Zar Hein
 
-LinkedIn : www.linkedin.com/in/khine-zar-hein
+Let's connect on [LinkedIn](https://www.linkedin.com/in/khine-zar-hein)
